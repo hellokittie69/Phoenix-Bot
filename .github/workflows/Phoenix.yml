@@ -5,27 +5,20 @@ SU:
   richiesta di pull:
     rami:
       - principale
-
 lavori:
   costruire:
-
     eseguito su: ubuntu-latest
-
     strategia:
       matrice:
         versione del nodo: [20.x]
-
     passaggi:
     - nome: Repository di checkout
       usi: azioni/checkout@v3
-
     - nome: Imposta Node.js
       usi: azioni/setup-node@v3
       con:
         versione-nodo: ${{ matrix.node-version }}
-
     - nome: Installa dipendenze
       eseguire: npm install
-
     - nome: Avvia applicazione
       esegui: npm start
